@@ -20,7 +20,7 @@ class CountryLookupService {
     private var searchTimer : Timer?
     private var searchResult : LookupResult = LookupResult()
     private var isLoading = false
-    private var delayInterval : TimeInterval = 0.7 // in seconds
+    private var delayInterval : TimeInterval = 0.5 // in seconds
     private var minSearchTermCharCount = 2
     
     public func getResult() -> [Country] {

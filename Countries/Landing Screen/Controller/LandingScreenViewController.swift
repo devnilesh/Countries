@@ -21,6 +21,7 @@ class LandingScreenViewController: UIViewController {
         self.setupTableView()
         self.addKeyboardObservers()
         self.setupGestureRecognizer()
+//        self.navigationController?.isNavigationBarHidden = true
     }
     
     deinit {
@@ -86,6 +87,14 @@ class LandingScreenViewController: UIViewController {
         self.countriesTable.scrollIndicatorInsets = contentInsets;
     }
     
+    private func displayCountry(_ details: CountryViewModel) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: String(describing: CountryDetailsViewController.self)) as! CountryDetailsViewController
+        controller.countryDetails = details
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
     @IBAction func dismissErrorView(_ sender: Any?) {
         self.showError("")
     }
@@ -110,7 +119,11 @@ extension LandingScreenViewController : UITableViewDataSource {
 }
 
 extension LandingScreenViewController : UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let countryDetails = self.viewModel.countryFor(row: indexPath.row) {
+            self.displayCountry(countryDetails)
+        }
+    }
 }
 
 extension LandingScreenViewController : UITextFieldDelegate {

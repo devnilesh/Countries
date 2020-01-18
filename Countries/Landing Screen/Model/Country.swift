@@ -7,6 +7,31 @@
 //
 
 import Foundation
+
 struct Country : Codable {
     var name : String?
+    var flag : String?
+    var capital : String?
+    var callingCodes : [String]?
+    var region : String?
+    var subregion : String?
+    var timezones : [String]?
+    var population : Int64?
+    var nativeName : String?
+    var area : Double?
+    var currencies : [Currency]?
+    var languages : [Lanugage]?
+}
+
+struct Currency : Codable {
+    var code : String?
+    var name : String?
+    var symbol : String?
+}
+
+struct Lanugage : Codable {
+    var iso639_1 : String?
+    var iso639_2  : String?
+    var name : String?
+    var nativeName : String?
 }
