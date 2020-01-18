@@ -8,22 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		FDC5A67D23D2DA1000223BE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A67C23D2DA1000223BE2 /* AppDelegate.swift */; };
-		FDC5A68123D2DA1000223BE2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A68023D2DA1000223BE2 /* ViewController.swift */; };
 		FDC5A68423D2DA1000223BE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC5A68223D2DA1000223BE2 /* Main.storyboard */; };
 		FDC5A68723D2DA1000223BE2 /* Countries.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A68523D2DA1000223BE2 /* Countries.xcdatamodeld */; };
 		FDC5A68923D2DA1200223BE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDC5A68823D2DA1200223BE2 /* Assets.xcassets */; };
 		FDC5A68C23D2DA1200223BE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC5A68A23D2DA1200223BE2 /* LaunchScreen.storyboard */; };
+		FDFDDA4A23D2DC4E001C4DBD /* LandingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDDA4923D2DC4E001C4DBD /* LandingScreenViewController.swift */; };
+		FDFDDA4D23D2E4D1001C4DBD /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDDA4C23D2E4D1001C4DBD /* CountryTableViewCell.swift */; };
+		FDFDDA4F23D2E748001C4DBD /* LandingScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDDA4E23D2E748001C4DBD /* LandingScreenViewModel.swift */; };
+		FDFDDA5123D2E7D8001C4DBD /* CountryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFDDA5023D2E7D8001C4DBD /* CountryViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FDC5A67923D2DA0F00223BE2 /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC5A67C23D2DA1000223BE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FDC5A68023D2DA1000223BE2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FDC5A68323D2DA1000223BE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FDC5A68623D2DA1000223BE2 /* Countries.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Countries.xcdatamodel; sourceTree = "<group>"; };
 		FDC5A68823D2DA1200223BE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDC5A68B23D2DA1200223BE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FDC5A68D23D2DA1200223BE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDFDDA4923D2DC4E001C4DBD /* LandingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewController.swift; sourceTree = "<group>"; };
+		FDFDDA4C23D2E4D1001C4DBD /* CountryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		FDFDDA4E23D2E748001C4DBD /* LandingScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingScreenViewModel.swift; sourceTree = "<group>"; };
+		FDFDDA5023D2E7D8001C4DBD /* CountryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +62,8 @@
 		FDC5A67B23D2DA1000223BE2 /* Countries */ = {
 			isa = PBXGroup;
 			children = (
+				FDFDDA4623D2DC16001C4DBD /* Landing Screen */,
 				FDC5A67C23D2DA1000223BE2 /* AppDelegate.swift */,
-				FDC5A68023D2DA1000223BE2 /* ViewController.swift */,
 				FDC5A68223D2DA1000223BE2 /* Main.storyboard */,
 				FDC5A68823D2DA1200223BE2 /* Assets.xcassets */,
 				FDC5A68A23D2DA1200223BE2 /* LaunchScreen.storyboard */,
@@ -65,6 +71,41 @@
 				FDC5A68523D2DA1000223BE2 /* Countries.xcdatamodeld */,
 			);
 			path = Countries;
+			sourceTree = "<group>";
+		};
+		FDFDDA4623D2DC16001C4DBD /* Landing Screen */ = {
+			isa = PBXGroup;
+			children = (
+				FDFDDA4823D2DC39001C4DBD /* ViewModel */,
+				FDFDDA4723D2DC31001C4DBD /* Controller */,
+			);
+			path = "Landing Screen";
+			sourceTree = "<group>";
+		};
+		FDFDDA4723D2DC31001C4DBD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FDFDDA4B23D2E4A6001C4DBD /* Cell */,
+				FDFDDA4923D2DC4E001C4DBD /* LandingScreenViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FDFDDA4823D2DC39001C4DBD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FDFDDA4E23D2E748001C4DBD /* LandingScreenViewModel.swift */,
+				FDFDDA5023D2E7D8001C4DBD /* CountryViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FDFDDA4B23D2E4A6001C4DBD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FDFDDA4C23D2E4D1001C4DBD /* CountryTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +179,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDC5A68123D2DA1000223BE2 /* ViewController.swift in Sources */,
+				FDFDDA4F23D2E748001C4DBD /* LandingScreenViewModel.swift in Sources */,
+				FDFDDA4D23D2E4D1001C4DBD /* CountryTableViewCell.swift in Sources */,
+				FDFDDA4A23D2DC4E001C4DBD /* LandingScreenViewController.swift in Sources */,
+				FDFDDA5123D2E7D8001C4DBD /* CountryViewModel.swift in Sources */,
 				FDC5A67D23D2DA1000223BE2 /* AppDelegate.swift in Sources */,
 				FDC5A68723D2DA1000223BE2 /* Countries.xcdatamodeld in Sources */,
 			);
