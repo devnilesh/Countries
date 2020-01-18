@@ -405,6 +405,9 @@
                                                                         <real key="value" value="3"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="saveDetails:" destination="oa0-OL-atZ" eventType="touchUpInside" id="S6y-jS-8ni"/>
+                                                                </connections>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BL1-of-u9A" userLabel="Padding">
                                                                 <rect key="frame" x="0.0" y="96" width="374" height="20"/>

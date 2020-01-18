@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		FD38C53723D37A6D0093D3D3 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD38C53623D37A6D0093D3D3 /* Extensions.swift */; };
+		FD38C53923D397790093D3D3 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD38C53823D397790093D3D3 /* LocalStorage.swift */; };
+		FD38C53D23D39CE20093D3D3 /* CountriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD38C53C23D39CE20093D3D3 /* CountriesRepository.swift */; };
+		FD38C54023D3A3AB0093D3D3 /* CountriesModelsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD38C53F23D3A3AB0093D3D3 /* CountriesModelsMapper.swift */; };
 		FD38D83923D32E0F00DE4D2B /* CountryLookupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD38D83823D32E0F00DE4D2B /* CountryLookupService.swift */; };
 		FD38D83C23D334A400DE4D2B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD38D83B23D334A400DE4D2B /* Reachability.swift */; };
 		FD38D83E23D3360600DE4D2B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD38D83D23D3360600DE4D2B /* Utility.swift */; };
@@ -32,6 +35,9 @@
 
 /* Begin PBXFileReference section */
 		FD38C53623D37A6D0093D3D3 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FD38C53823D397790093D3D3 /* LocalStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		FD38C53C23D39CE20093D3D3 /* CountriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesRepository.swift; sourceTree = "<group>"; };
+		FD38C53F23D3A3AB0093D3D3 /* CountriesModelsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesModelsMapper.swift; sourceTree = "<group>"; };
 		FD38D83823D32E0F00DE4D2B /* CountryLookupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryLookupService.swift; sourceTree = "<group>"; };
 		FD38D83B23D334A400DE4D2B /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		FD38D83D23D3360600DE4D2B /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -67,6 +73,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD38C53A23D39CAD0093D3D3 /* LocalStorage */ = {
+			isa = PBXGroup;
+			children = (
+				FD38C53B23D39CC00093D3D3 /* Repositories */,
+				FD38C53823D397790093D3D3 /* LocalStorage.swift */,
+			);
+			path = LocalStorage;
+			sourceTree = "<group>";
+		};
+		FD38C53B23D39CC00093D3D3 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				FD38C53C23D39CE20093D3D3 /* CountriesRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		FD38C53E23D39EEB0093D3D3 /* CountriesModelsMapper */ = {
+			isa = PBXGroup;
+			children = (
+				FD38C53F23D3A3AB0093D3D3 /* CountriesModelsMapper.swift */,
+			);
+			path = CountriesModelsMapper;
+			sourceTree = "<group>";
+		};
 		FD38D83A23D3347F00DE4D2B /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +151,8 @@
 		FDC5A67B23D2DA1000223BE2 /* Countries */ = {
 			isa = PBXGroup;
 			children = (
+				FD38C53E23D39EEB0093D3D3 /* CountriesModelsMapper */,
+				FD38C53A23D39CAD0093D3D3 /* LocalStorage */,
 				FD38D83A23D3347F00DE4D2B /* Utils */,
 				FDFDDA5223D2EFA7001C4DBD /* Services */,
 				FD38D83F23D34ECC00DE4D2B /* Country Details */,
@@ -303,8 +336,11 @@
 				FDFDDA5723D2F21D001C4DBD /* APIConstants.swift in Sources */,
 				FD38D83E23D3360600DE4D2B /* Utility.swift in Sources */,
 				FDC5A67D23D2DA1000223BE2 /* AppDelegate.swift in Sources */,
+				FD38C54023D3A3AB0093D3D3 /* CountriesModelsMapper.swift in Sources */,
+				FD38C53D23D39CE20093D3D3 /* CountriesRepository.swift in Sources */,
 				FDFDDA5523D2F1D1001C4DBD /* APIConfiguration.swift in Sources */,
 				FDC5A68723D2DA1000223BE2 /* Countries.xcdatamodeld in Sources */,
+				FD38C53923D397790093D3D3 /* LocalStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

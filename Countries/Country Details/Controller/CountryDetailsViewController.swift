@@ -40,4 +40,14 @@ class CountryDetailsViewController: UIViewController {
         languages.text = countryDetails?.languages
         totalArea.text = countryDetails?.totalArea
     }
+    
+    @IBAction func saveDetails(_ sender: Any) {
+        do {
+            try self.countryDetails?.save()
+            self.navigationController?.popViewController(animated: true)
+        }
+        catch {
+            print(error.localizedDescription)
+        }
+    }
 }

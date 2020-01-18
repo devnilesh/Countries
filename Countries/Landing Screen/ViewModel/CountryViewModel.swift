@@ -116,4 +116,36 @@ class CountryViewModel  {
             return ""
         }
     }
+    
+    func save() throws{
+        let context = LocalStorage.managedObjectContext()
+        let repository = CountriesRepository(context: context)
+        let countryDetails = try repository.createCountry(from: self.country)
+        CountriesModelsMapper.map(from: self.country, to: countryDetails)
+        
+        if let currencies = self.country.currencies {
+            var tmpCurrencies : [CountryCurrency] = []
+            for cur in currencies {
+                let currency = try repository.createCountryCurrency(from: cur)
+                currency.code = cur.code
+                currency.symbol = cur.symbol
+                tmpCurrencies.append(currency)
+            }
+            countryDetails.currencies = NSSet(array: tmpCurrencies)
+        }
+        
+        if let languages = self.country.languages {
+            var tmpLanguages : [CountryLanguage] = []
+            for lng in languages {
+                let language = try repository.createCountryLanguage(from: lng)
+                language.nativeName = lng.nativeName
+                language.iso639_1 = lng.iso639_1
+                language.iso639_2 = lng.iso639_2
+                tmpLanguages.append(language)
+            }
+            countryDetails.languages = NSSet(array: tmpLanguages)
+        }
+        try LocalStorage.saveContext(context: context, saveParent: true)
+    }
+   
 }

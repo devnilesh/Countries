@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Country : Codable {
+class Country : Codable {
     var name : String?
     var flag : String?
     var capital : String?
@@ -20,16 +20,16 @@ struct Country : Codable {
     var nativeName : String?
     var area : Double?
     var currencies : [Currency]?
-    var languages : [Lanugage]?
+    var languages : [Language]?
 }
 
-struct Currency : Codable {
+class Currency : Codable {
     var code : String?
     var name : String?
     var symbol : String?
 }
 
-struct Lanugage : Codable {
+class Language : Codable {
     var iso639_1 : String?
     var iso639_2  : String?
     var name : String?

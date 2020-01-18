@@ -18,10 +18,15 @@ class LandingScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupTableView()
-        self.addKeyboardObservers()
-        self.setupGestureRecognizer()
-//        self.navigationController?.isNavigationBarHidden = true
+        do {
+            self.setupTableView()
+            self.addKeyboardObservers()
+            self.setupGestureRecognizer()
+            try self.viewModel.loadfflineCountries()
+        }
+        catch {
+            print(error.localizedDescription)
+        }
     }
     
     deinit {
