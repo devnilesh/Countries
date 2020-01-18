@@ -11,28 +11,26 @@ import UIKit
 class LandingScreenViewModel {
     
     private var countries : [CountryViewModel] = []
-    private var countriesList : [Country] = []
-    
-    func loadTestModels() {
-        self.countries = [
-            CountryViewModel.init(),
-            CountryViewModel.init(),
-            CountryViewModel.init(),
-            CountryViewModel.init(),CountryViewModel.init()
-        ]
+    private var countryLookupService: CountryLookupService = CountryLookupService()
+
+    private func loadCountriesViewModels(from: [Country]) {
+        self.countries = from.map { country in
+            return CountryViewModel.init(country: country)
+        }
     }
     
-    func searchCountryBy(_ name: String) {
-        let queryModel = SearchCountryRequestModel(countryName: name)
-        SearchCountryAPIRequest().searchCountry(apiModel: queryModel) { [weak self]  apiResult in
-            DispatchQueue.main.async {
-                switch apiResult {
-                case .success(let countriesList):
-                    self?.countriesList = countriesList
-                    print("Found countries : \(countriesList.count)")
-                case .failure(let error):
-                    print("\(error)")
-                }
+    func searchCountryBy(_ name: String, _ completion: @escaping (String?)-> Void) {
+        guard Utility.isNetworkReachable() else {
+            return completion("Please check internet connection")
+        }
+        self.countryLookupService.search(term: name) { [weak self](success, error) in
+            if let this = self {
+                let countries = this.countryLookupService.getResult()
+                this.loadCountriesViewModels(from: countries)
+                completion(nil)
+            }
+            else {
+                completion("Something went wrong, failed to search")
             }
         }
     }

@@ -9,6 +9,11 @@
 import UIKit
 
 class CountryViewModel  {
+    var country : Country
+    
+    init(country: Country) {
+        self.country = country
+    }
     
     var flagImage : UIImage? {
         get {
@@ -16,9 +21,9 @@ class CountryViewModel  {
         }
     }
     
-    var name : String  {
+    var name : String?  {
         get {
-            return "India"
+            return self.country.name
         }
     }
 }

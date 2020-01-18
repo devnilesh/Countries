@@ -18,6 +18,40 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xTS-Me-3Ec">
                                 <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCh-f1-33n">
+                                        <rect key="frame" x="0.0" y="-44" width="414" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Internet connection" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQL-s4-4cW">
+                                                <rect key="frame" x="10" y="5" width="334" height="34"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DG8-Nj-HQi">
+                                                <rect key="frame" x="349" y="1" width="60" height="42"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="kDF-bn-5P4"/>
+                                                </constraints>
+                                                <state key="normal" title="Dismiss">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="dismissErrorView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="39d-8V-4WY"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="mQL-s4-4cW" firstAttribute="top" secondItem="TCh-f1-33n" secondAttribute="top" constant="5" id="Cdh-ny-gRb"/>
+                                            <constraint firstItem="DG8-Nj-HQi" firstAttribute="leading" secondItem="mQL-s4-4cW" secondAttribute="trailing" constant="5" id="G2x-Ag-BUX"/>
+                                            <constraint firstAttribute="trailing" secondItem="DG8-Nj-HQi" secondAttribute="trailing" constant="5" id="UYj-8D-iCG"/>
+                                            <constraint firstAttribute="bottom" secondItem="mQL-s4-4cW" secondAttribute="bottom" constant="5" id="Uej-BV-Wvb"/>
+                                            <constraint firstAttribute="bottom" secondItem="DG8-Nj-HQi" secondAttribute="bottom" constant="1" id="eb9-TE-atQ"/>
+                                            <constraint firstItem="DG8-Nj-HQi" firstAttribute="top" secondItem="TCh-f1-33n" secondAttribute="top" constant="1" id="h4y-j3-vLD"/>
+                                            <constraint firstAttribute="height" constant="44" id="nC6-JY-f2d"/>
+                                            <constraint firstItem="mQL-s4-4cW" firstAttribute="leading" secondItem="TCh-f1-33n" secondAttribute="leading" constant="10" id="vhN-eS-2Va"/>
+                                        </constraints>
+                                    </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FJI-Wl-hMk">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                                         <subviews>
@@ -44,6 +78,9 @@
                                                 <rect key="frame" x="60" y="0.0" width="324" height="49"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="fmQ-iu-TNF"/>
+                                                </connections>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="efl-1y-tdH">
                                                 <rect key="frame" x="394" y="0.0" width="20" height="49"/>
@@ -62,9 +99,6 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Aca-ek-yDP"/>
-                                </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Km5-5O-Bvt">
                                 <rect key="frame" x="0.0" y="102" width="414" height="794"/>
@@ -128,6 +162,9 @@
                     </view>
                     <connections>
                         <outlet property="countriesTable" destination="Km5-5O-Bvt" id="gUs-B1-h3B"/>
+                        <outlet property="errorMessage" destination="mQL-s4-4cW" id="9bp-07-HRb"/>
+                        <outlet property="errorView" destination="TCh-f1-33n" id="VBj-ie-baE"/>
+                        <outlet property="searchField" destination="53O-w5-rgx" id="2Hw-lK-rQM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

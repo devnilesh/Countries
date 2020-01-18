@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD38D83923D32E0F00DE4D2B /* CountryLookupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD38D83823D32E0F00DE4D2B /* CountryLookupService.swift */; };
+		FD38D83C23D334A400DE4D2B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD38D83B23D334A400DE4D2B /* Reachability.swift */; };
+		FD38D83E23D3360600DE4D2B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD38D83D23D3360600DE4D2B /* Utility.swift */; };
 		FDC5A67D23D2DA1000223BE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A67C23D2DA1000223BE2 /* AppDelegate.swift */; };
 		FDC5A68423D2DA1000223BE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC5A68223D2DA1000223BE2 /* Main.storyboard */; };
 		FDC5A68723D2DA1000223BE2 /* Countries.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FDC5A68523D2DA1000223BE2 /* Countries.xcdatamodeld */; };
@@ -26,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD38D83823D32E0F00DE4D2B /* CountryLookupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryLookupService.swift; sourceTree = "<group>"; };
+		FD38D83B23D334A400DE4D2B /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		FD38D83D23D3360600DE4D2B /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		FDC5A67923D2DA0F00223BE2 /* Countries.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Countries.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDC5A67C23D2DA1000223BE2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDC5A68323D2DA1000223BE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD38D83A23D3347F00DE4D2B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FD38D83B23D334A400DE4D2B /* Reachability.swift */,
+				FD38D83D23D3360600DE4D2B /* Utility.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		FDC5A67023D2DA0F00223BE2 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +91,7 @@
 		FDC5A67B23D2DA1000223BE2 /* Countries */ = {
 			isa = PBXGroup;
 			children = (
+				FD38D83A23D3347F00DE4D2B /* Utils */,
 				FDFDDA5223D2EFA7001C4DBD /* Services */,
 				FDFDDA4623D2DC16001C4DBD /* Landing Screen */,
 				FDC5A67C23D2DA1000223BE2 /* AppDelegate.swift */,
@@ -94,6 +110,7 @@
 				FDFDDA6023D2F900001C4DBD /* Model */,
 				FDFDDA4823D2DC39001C4DBD /* ViewModel */,
 				FDFDDA4723D2DC31001C4DBD /* Controller */,
+				FD38D83823D32E0F00DE4D2B /* CountryLookupService.swift */,
 			);
 			path = "Landing Screen";
 			sourceTree = "<group>";
@@ -240,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD38D83923D32E0F00DE4D2B /* CountryLookupService.swift in Sources */,
 				FDFDDA5923D2F41B001C4DBD /* APIHelper.swift in Sources */,
 				FDFDDA5C23D2F4BD001C4DBD /* JSONResponseDecoder.swift in Sources */,
 				FDFDDA6423D2F9BF001C4DBD /* SearchCountryRequest.swift in Sources */,
@@ -247,9 +265,11 @@
 				FDFDDA5F23D2F66C001C4DBD /* CountryAPIs.swift in Sources */,
 				FDFDDA6223D2F90D001C4DBD /* Country.swift in Sources */,
 				FDFDDA4D23D2E4D1001C4DBD /* CountryTableViewCell.swift in Sources */,
+				FD38D83C23D334A400DE4D2B /* Reachability.swift in Sources */,
 				FDFDDA4A23D2DC4E001C4DBD /* LandingScreenViewController.swift in Sources */,
 				FDFDDA5123D2E7D8001C4DBD /* CountryViewModel.swift in Sources */,
 				FDFDDA5723D2F21D001C4DBD /* APIConstants.swift in Sources */,
+				FD38D83E23D3360600DE4D2B /* Utility.swift in Sources */,
 				FDC5A67D23D2DA1000223BE2 /* AppDelegate.swift in Sources */,
 				FDFDDA5523D2F1D1001C4DBD /* APIConfiguration.swift in Sources */,
 				FDC5A68723D2DA1000223BE2 /* Countries.xcdatamodeld in Sources */,

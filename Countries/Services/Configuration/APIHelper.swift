@@ -44,7 +44,6 @@ struct APIHelper {
                 completion(.failure(error ?? NetworkError.unknown))
                 return
             }
-
             if let httpStatus = response as? HTTPURLResponse,  ![200, 201].contains(httpStatus.statusCode) {
                 completion(.failure(NetworkError.incorrectData(data)))
             }
