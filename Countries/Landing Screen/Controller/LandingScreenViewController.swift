@@ -18,6 +18,11 @@ class LandingScreenViewController: UIViewController {
         self.setupTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.viewModel.searchCountryBy("India")
+    }
+    
     // MARK:- Private Interface
     private func setupTableView() {
         self.viewModel.loadTestModels()

@@ -11,7 +11,7 @@ import UIKit
 class LandingScreenViewModel {
     
     private var countries : [CountryViewModel] = []
-    
+    private var countriesList : [Country] = []
     
     func loadTestModels() {
         self.countries = [
@@ -22,6 +22,20 @@ class LandingScreenViewModel {
         ]
     }
     
+    func searchCountryBy(_ name: String) {
+        let queryModel = SearchCountryRequestModel(countryName: name)
+        SearchCountryAPIRequest().searchCountry(apiModel: queryModel) { [weak self]  apiResult in
+            DispatchQueue.main.async {
+                switch apiResult {
+                case .success(let countriesList):
+                    self?.countriesList = countriesList
+                    print("Found countries : \(countriesList.count)")
+                case .failure(let error):
+                    print("\(error)")
+                }
+            }
+        }
+    }
     
     func numberOfRows() -> Int{
         return countries.count
