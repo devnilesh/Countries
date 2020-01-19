@@ -11,6 +11,7 @@ import UIKit
 class LandingScreenViewModel {
     
     private var countries : [CountryViewModel] = []
+    private var offlineCountries :  [CountryViewModel] = []
     private var countryLookupService: CountryLookupService = CountryLookupService()
     private let repository : CountriesRepository = CountriesRepository()
 
@@ -29,18 +30,24 @@ class LandingScreenViewModel {
             tmpCountries.append(country)
         }
         loadCountriesViewModels(from: tmpCountries)
+        self.offlineCountries = self.countries
     }
     
     private func filterLocally(_ name: String) {
-        self.countries = self.countries.filter({
+        let filtered = self.offlineCountries.filter({
             $0.name?.range(of: name, options: .caseInsensitive) != nil
         })
+        self.countries = (filtered.count == 0) ? self.offlineCountries : filtered
     }
     
     func searchCountryBy(_ name: String, _ completion: @escaping (String?)-> Void) {
         guard Utility.isNetworkReachable() else {
             self.filterLocally(name)
             return completion("You are offline")
+        }
+        guard name.count > 0 else {
+            self.filterLocally(name)
+            return completion(nil)
         }
         self.countryLookupService.search(term: name) { [weak self](success, error) in
             if let this = self {

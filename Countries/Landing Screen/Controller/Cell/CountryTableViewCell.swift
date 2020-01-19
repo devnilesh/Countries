@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVGKit
 
 class CountryTableViewCell: UITableViewCell {
     @IBOutlet weak var countryFlag : UIImageView!
@@ -21,7 +22,9 @@ class CountryTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.countryFlag.image = UIImage(named: "placeholder")
     }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -30,8 +33,11 @@ class CountryTableViewCell: UITableViewCell {
     }
     
     private func updateUI() {
-        self.countryFlag.image = country?.flagImage
         self.countryName.text = country?.name
+        self.country?.loadImage({ (image) in
+            self.countryFlag.image = image
+        })
     }
-
+    
 }
+

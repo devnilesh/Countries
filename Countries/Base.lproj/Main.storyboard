@@ -104,36 +104,55 @@
                                 <rect key="frame" x="0.0" y="58" width="414" height="750"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CountryTableViewCell" rowHeight="50" id="V1j-ZJ-8Pe" customClass="CountryTableViewCell" customModule="Countries" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CountryTableViewCell" rowHeight="55" id="V1j-ZJ-8Pe" customClass="CountryTableViewCell" customModule="Countries" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V1j-ZJ-8Pe" id="lYO-Bb-xWu">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VrL-ZV-ZEJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xIZ-R8-1L3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="india" translatesAutoresizingMaskIntoConstraints="NO" id="LeR-YW-kaz">
-                                                            <rect key="frame" x="0.0" y="0.0" width="83.5" height="50"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VrL-ZV-ZEJ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="53"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QVl-0H-ZQ4">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="2" height="53"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="2" id="1qg-Ep-iFQ"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="LeR-YW-kaz">
+                                                                    <rect key="frame" x="12" y="0.0" width="88.5" height="53"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="LeR-YW-kaz" secondAttribute="height" multiplier="5:3" id="dgd-zy-TBY"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsg-lU-MD6">
+                                                                    <rect key="frame" x="110.5" y="0.0" width="303.5" height="53"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prr-Xw-1PS">
+                                                            <rect key="frame" x="0.0" y="53" width="414" height="2"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" secondItem="LeR-YW-kaz" secondAttribute="height" multiplier="5:3" id="dgd-zy-TBY"/>
+                                                                <constraint firstAttribute="height" constant="2" id="YuY-Bu-aP3"/>
                                                             </constraints>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xsg-lU-MD6">
-                                                            <rect key="frame" x="93.5" y="0.0" width="320.5" height="50"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
+                                                        </view>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="VrL-ZV-ZEJ" secondAttribute="trailing" id="JmB-O0-SsJ"/>
-                                                <constraint firstAttribute="bottom" secondItem="VrL-ZV-ZEJ" secondAttribute="bottom" id="WDc-z1-q29"/>
-                                                <constraint firstItem="VrL-ZV-ZEJ" firstAttribute="top" secondItem="lYO-Bb-xWu" secondAttribute="top" id="t1L-3f-ZeT"/>
-                                                <constraint firstItem="VrL-ZV-ZEJ" firstAttribute="leading" secondItem="lYO-Bb-xWu" secondAttribute="leading" id="wH3-xL-H1v"/>
+                                                <constraint firstItem="xIZ-R8-1L3" firstAttribute="leading" secondItem="lYO-Bb-xWu" secondAttribute="leading" id="Y8c-Mc-1zd"/>
+                                                <constraint firstAttribute="trailing" secondItem="xIZ-R8-1L3" secondAttribute="trailing" id="Yxz-KU-Aur"/>
+                                                <constraint firstAttribute="bottom" secondItem="xIZ-R8-1L3" secondAttribute="bottom" id="r09-KS-60g"/>
+                                                <constraint firstItem="xIZ-R8-1L3" firstAttribute="top" secondItem="lYO-Bb-xWu" secondAttribute="top" id="xme-0s-qhN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -465,6 +484,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="vba-0I-qV5"/>
                     <connections>
+                        <outlet property="btnSave" destination="h8o-hj-ghS" id="8DG-Ch-nli"/>
                         <outlet property="callingCode" destination="t87-sR-0MW" id="3BU-D9-31Z"/>
                         <outlet property="capital" destination="GtV-lD-Y7C" id="lVc-yH-HSP"/>
                         <outlet property="countryFlag" destination="oAh-4M-r84" id="vXt-Tf-H5f"/>
@@ -508,5 +528,6 @@
     <resources>
         <image name="icon_search" width="30" height="30"/>
         <image name="india" width="512" height="512"/>
+        <image name="placeholder" width="150" height="150"/>
     </resources>
 </document>

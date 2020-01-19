@@ -63,7 +63,7 @@ class CountriesRepository: NSObject {
     }
     
     public func getAllCountries() throws -> [CountryDetails]{
-        let sortDescripter = NSSortDescriptor(key: "name", ascending: false)
+        let sortDescripter = NSSortDescriptor(key: "name", ascending: true)
         return try self.getCountry(predicate: nil, sortDescripters: [sortDescripter], limit: nil)
     }
     

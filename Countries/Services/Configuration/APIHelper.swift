@@ -15,6 +15,8 @@ enum NetworkError: Error {
 
 typealias WebServiceCompletionBlock = (Result<Data, Error>) -> Void
 
+typealias WebServiceFileDownloadCompletionBlock = (Result<URL?, Error>) -> Void
+
 /// Helper class to prepare request(adding headers & clubbing base URL) & perform API request.
 struct APIHelper {
     
@@ -38,7 +40,10 @@ struct APIHelper {
                 print(error.localizedDescription)
             }
         }
-
+        return requestAPI(request, completion: completion)
+    }
+    
+    @discardableResult public static func requestAPI(_ request: URLRequest, completion: @escaping WebServiceCompletionBlock) -> URLSessionDataTask?{
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 completion(.failure(error ?? NetworkError.unknown))
@@ -54,5 +59,4 @@ struct APIHelper {
         task.resume()
         return task
     }
-
 }

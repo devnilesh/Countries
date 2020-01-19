@@ -15,20 +15,14 @@ class CountryViewModel  {
         self.country = country
     }
     
-    var flagImage : UIImage? {
+    private var flagImage : UIImage?
+    
+    var flagImageURL : String? {
         get {
-            return  UIImage(named: "india")
+            return country.flag
         }
     }
     
-    var flagImageURL : URL? {
-        get {
-            if let url = country.flag {
-                return URL(string: url)
-            }
-            return nil
-        }
-    }
     
     var name : String?  {
         get {
@@ -117,6 +111,30 @@ class CountryViewModel  {
         }
     }
     
+    func loadImage(_ completion : @escaping (UIImage) -> Void) {
+        if let flag = flagImage {
+            completion(flag)
+        }
+        else if let urlStr = flagImageURL, let url = URL(string: urlStr){
+            GetFlagAPIRequest().getFlagImage(url: url) { [weak self] result in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(let image):
+                        self?.flagImage = image
+                        completion(image)
+                    case .failure(let error):
+                        // TODO: Log Error
+                        print("Image load failed: \(error.localizedDescription)")
+                        completion(UIImage(named: "placeholder")!)
+                    }
+                }
+            }
+        }
+        else {
+            completion(UIImage(named: "placeholder")!)
+        }
+    }
+    
     func save() throws{
         let context = LocalStorage.managedObjectContext()
         let repository = CountriesRepository(context: context)
@@ -146,6 +164,15 @@ class CountryViewModel  {
             countryDetails.languages = NSSet(array: tmpLanguages)
         }
         try LocalStorage.saveContext(context: context, saveParent: true)
+    }
+    
+    func isOffline() throws -> Bool {
+        let context = LocalStorage.managedObjectContext()
+        let repository = CountriesRepository(context: context)
+        if let name = self.country.name {
+            return (try repository.getCountryBy(name: name) != nil)
+        }
+        return false
     }
    
 }
